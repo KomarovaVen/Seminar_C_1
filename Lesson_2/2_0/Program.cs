@@ -1,12 +1,10 @@
 ﻿// 0. Напишите программу, которая принимает на вход трёхзначное число
-//    и на выходе показывает последнюю цифру этого числа.
+//   и на выходе показывает последнюю цифру этого числа.
 
-int TakeNum(int num)
+int Chislo(int num)
 {
     Console.WriteLine(num);
     return num % 10;
 }
-
-
-int result = TakeNum(new Random().Next(100, 1000));
+int result = Chislo(new Random().Next(100, 1000));
 Console.WriteLine(result);
