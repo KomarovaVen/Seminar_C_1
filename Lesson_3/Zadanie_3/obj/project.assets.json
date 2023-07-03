@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\v.komarova.CORP\\Downloads\\1_lesson (1)\\1_lesson\\Seminar_C_1\\Lesson_3\\Zadanie_3\\Zadanie_3.csproj",
+      "projectUniqueName": "C:\\Users\\v.komarova.CORP\\Downloads\\1_lesson (1)\\Seminar_C_1\\Lesson_3\\Zadanie_3\\Zadanie_3.csproj",
       "projectName": "Zadanie_3",
-      "projectPath": "C:\\Users\\v.komarova.CORP\\Downloads\\1_lesson (1)\\1_lesson\\Seminar_C_1\\Lesson_3\\Zadanie_3\\Zadanie_3.csproj",
+      "projectPath": "C:\\Users\\v.komarova.CORP\\Downloads\\1_lesson (1)\\Seminar_C_1\\Lesson_3\\Zadanie_3\\Zadanie_3.csproj",
       "packagesPath": "C:\\Users\\v.komarova.CORP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\v.komarova.CORP\\Downloads\\1_lesson (1)\\1_lesson\\Seminar_C_1\\Lesson_3\\Zadanie_3\\obj\\",
+      "outputPath": "C:\\Users\\v.komarova.CORP\\Downloads\\1_lesson (1)\\Seminar_C_1\\Lesson_3\\Zadanie_3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\v.komarova.CORP\\AppData\\Roaming\\NuGet\\NuGet.Config"
