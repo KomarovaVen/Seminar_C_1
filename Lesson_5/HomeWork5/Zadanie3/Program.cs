@@ -40,9 +40,9 @@ void ChisloRaznica(double[] arr)
 
 Console.WriteLine("Задайте размерность массива ");
 int num = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Задайте начальный 3-х значный диапозон массива ");
+Console.WriteLine("Задайте начальный диапозон массива ");
 int start = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Задайте кнечный 3-х значный диапозон массива ");
+Console.WriteLine("Задайте кнечный диапозон массива ");
 int stop = int.Parse(Console.ReadLine()!);
 
 double[] mass = MassNums(num, start, stop);
