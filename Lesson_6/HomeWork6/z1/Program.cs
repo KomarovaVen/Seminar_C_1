@@ -28,10 +28,10 @@ void Chislo(int[] arr)
 
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] == 0)
-            count += arr[i];
+        if (arr[i] > 0)
+            count = +arr[i];
     }
-    Console.Write(count);
+    Console.Write($"Чисел больше 0:{count}");
 }
 
 Console.WriteLine("Задайте размерность массива ");
