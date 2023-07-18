@@ -33,9 +33,13 @@ void ChisloRaznica(double[] arr)
     {
         if (n_max < arr[i])
             n_max = arr[i];
+
+        else if (n_min > arr[i])
+            n_min = arr[i];
     }
-    Console.Write($"Max:{n_max}, min: {n_min}. ");
-    Console.WriteLine($"Raznica:{n_max} - ({n_min}) = {Math.Round(n_max - n_min)}");
+
+    Console.Write($"Max: {n_max}, min: {n_min}. ");
+    Console.WriteLine($"Raznica: {n_max} - ({n_min}) = {Math.Round(n_max - n_min)}");
 }
 
 Console.WriteLine("Задайте размерность массива ");
