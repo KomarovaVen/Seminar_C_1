@@ -28,18 +28,24 @@ void FirstLast(int[,] arr)
     int row_size = arr.GetLength(0);
     int column_size = arr.GetLength(1);
 
-    for (int i = 0; i < arr.GetLength(0) - 1; i++)
-        for (int j = i + 1; j < arr.GetLength(1); j++)
-            if (arr[i, 0] > arr[0, j])
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            for (int k = 0; k < arr.GetLength(1) - 1; k++)
             {
-                int temp = arr[i, 0];
-                arr[i, 0] = arr[0, j];
-                arr[0, j] = temp;
+                if (arr[i, k] < arr[i, k + 1])
+                {
+                    int temp = arr[i, k + 1];
+                    arr[i, k + 1] = arr[i, k];
+                    arr[i, k] = temp;
+                }
             }
-    //return arr;
+
+        }
+    }
+
 }
-
-
 Console.Write("Введите количество строк: ");
 int row_num = int.Parse(Console.ReadLine()!);
 Console.Write("Введите количество столбцов: ");
