@@ -41,7 +41,7 @@ string MatrixT(int[,] arr)
             (arr[i, j], arr[j, i]) = (arr[j, i], arr[i, j]);
     }
 
-    return "Matrix transposition is possible"; ;
+    return "Matrix transposition is possible";
 }
 
 
