@@ -1,72 +1,84 @@
 ﻿// Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-void Print(int[,] arr_a)
+void Print(int[,] arr)
 {
-    int row_size = arr_a.GetLength(0);
-    int column_size = arr_a.GetLength(1);
+    int row_size = A.GetLength(0);
+    int column_size = A.GetLength(1);
+
     for (int i = 0; i < row_size; i++)
     {
-        for (int j = 0; j < arr_a.GetLength(1); j++)
-            Console.Write($" {arr_a[i, j]} ");
+        for (int j = 0; j < column_size; j++)
+            Console.Write($" {arr[i, j]} ");
         Console.WriteLine();
     }
     Console.WriteLine();
 }
 
-int[,] MassNums(int row, int column, int from, int to)
+int[,] MatrixA(int row, int column, int from, int to)
 {
-    int row_num = arr.GetLength(0);
-    int column_num = arr.GetLength(1);
+    int[,] A = new int[row, column];
 
-    int[,] arr_a = new int[row, column];
-
-    for (int i = 0; i < arr_a.GetLength(0); i++)
-        for (int j = 0; j < arr_a.GetLength(1); j++)
-            arr_a[i, j] = new Random().Next(from, to);
-    return arr_a;
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            A[i, j] = new Random().Next(from, to);
+    return A;
 }
-void Print1(int[,] arr_b)
+void Print1(int[,] arr1)
 {
-    int row_size1 = arr_b.GetLength(0);
-    int column_size1 = arr_b.GetLength(1);
+    int row_size1 = B.GetLength(0);
+    int column_size1 = B.GetLength(1);
 
-    for (int i = 0; i < arr_b.GetLength(0); i++)
+    for (int i = 0; i < row_size1; i++)
     {
-        for (int j = 0; j < arr_b.GetLength(0); j++)
-            Console.Write($" {arr_b[i, j]} ");
+        for (int j = 0; j < column_size1; j++)
+            Console.Write($" {arr1[i, j]} ");
         Console.WriteLine();
     }
     Console.WriteLine();
 }
 
-int[,] MassNums1(int row, int column, int from, int to)
+int[,] MatrixB(int row1, int column1, int from, int to)
 {
-    int row_size1 = arr_b.GetLength(0);
-    int column_size1 = arr_b.GetLength(1);
-    int[,] arr_b = new int[row, column];
+    int[,] arr1 = new int[row1, column1];
 
-    for (int i = 0; i < arr_b.GetLength(0); i++)
-        for (int j = 0; j < arr_b.GetLength(1); j++)
+    for (int i = 0; i < row1; i++)
+        for (int j = 0; j < column1; j++)
             arr1[i, j] = new Random().Next(from, to);
-    return arr_b;
+    return arr1;
 }
 
-string MatrixU(int[,] arr_a, int[,] arr_b)
+void Matrix(int[,] a, int[,] b)
 {
-    int a = 0;
-    int b = 0;
-    int[,] rez = new int[a, b];
-
-    if (arr_a != arr_b) return "Matrix transposition is not possible";
-
-    for (int i = 0; i < a; ++i)
+    A = a;
+    B = b;
+}
+bool CheckMatrix()
+{
+    if (A.GetLength(1) != B.GetLength(0))
     {
-        for (int j = 0; j < b; ++j)
-            for (int k = 0; k < b; k++)
-                rez[i, j] += a[i, k] * b[k, j];
-
-        Console.Write(rez);
+        Console.WriteLine("Матрицы перемножить нельзя.");
+        return false;
     }
+    else
+        return true;
+}
 
+int Multiply(int[,] rez)
+{
+    int[,] rez = new int[A.GetLength(0), B.GetLength(0)];
+
+    for (i = 0; i < A.GetLength(0); i++)
+    {
+        for (j = 0; j < B.GetLength(1); j++)
+        {
+            int sum = 0;
+            for (int k = 0; k < A.GetLength(0); k++)
+            {
+                sum += A[i, k] * B[k, j];
+            }
+            rez[i, j] = sum;
+        }
+    }
+    return rez;
 }
 
 Console.Write("Введите количество строк в 1 массиве: ");
@@ -89,8 +101,9 @@ int start1 = int.Parse(Console.ReadLine()!);
 Console.Write("Max значение во 2 массиве:");
 int stop1 = int.Parse(Console.ReadLine()!);
 
-int[,] mass = MassNums(row_num, column_num, start, stop);
-int[,] massiv = MassNums1(row_num, column_num, start, stop);
-Print(mass);
-Print1(massiv);
-MatrixU(rez);
+int[,] A = MatrixA(row_num, column_num, start, stop);
+int[,] B = MatrixB(row_num1, column_num1, start1, stop1);
+double[,] massiv2 = RezMatr();
+Print(A);
+Print1(B);
+Multiply(rez);
