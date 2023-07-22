@@ -27,36 +27,44 @@ int[,] MassNums(int row, int column, int from, int to)
     return arr;
 }
 
-int[] FrequencyDict(int[,] arr, int max_num)
+int[,] MatProd(int[,] arr_first, int[,] arr_second)
 {
-    int[] freq = new int[max_num + 1];
+    int row_size = arr_first.GetLength(0);
+    int column_size = arr_first.GetLength(1);
+    int[,] pr_matrix = new int[row_size, column_size];
 
-    foreach (int item in arr) freq[item] += 1;
-    return freq;
+    if (row_size != arr_second.GetLength(0) || column_size != arr_second.GetLength(1)) return pr_matrix;
+
+    for (int i = 0; i < row_size; i++)
+        for (int j = 0; j < column_size; j++)
+            pr_matrix[i, j] = arr_first[i, j] * arr_second[i, j];
+    return pr_matrix;
 }
 
-void PrintMass(int[] arr)
-{
-    for (int i = 0; i < arr.Length; i++)
-        Console.WriteLine($"{i} meets: {arr[i]}");
-    Console.WriteLine();
-}
 
 
-Console.Write("Enter the number of rows: ");
-int row_num = int.Parse(Console.ReadLine()!);
-Console.Write("Enter the number of columns: ");
-int column_num = int.Parse(Console.ReadLine()!);
+Console.Write("Введите количество строк 1 матрицы:  ");
+int row_num_1 = int.Parse(Console.ReadLine()!);
+Console.Write("Введите количество столбцов 1 матрицы: ");
+int column_num_1 = int.Parse(Console.ReadLine()!);
 
-Console.Write("Enter the min number of massive ");
+Console.Write("Введите количество строк 2 матрицы:  ");
+int row_num_2 = int.Parse(Console.ReadLine()!);
+Console.Write("Введите количество столбцов 2 матрицы: ");
+int column_num_2 = int.Parse(Console.ReadLine()!);
+
+Console.Write("Min значение в массиве:");
 int start = int.Parse(Console.ReadLine()!);
-Console.Write("Enter the max number of massive ");
+Console.Write("Max значение в массиве:");
 int stop = int.Parse(Console.ReadLine()!);
 
-int[,] mass = MassNums(row_num, column_num, start, stop);
+int[,] arr_1 = MassNums(row_num_1, column_num_1, 0, 5);
+Print(arr_1);
+int[,] arr_2 = MassNums(row_num_2, column_num_2, 0, 5);
+Print(arr_2);
 
-Print(mass);
+int[,] res_matrix = MatProd(arr_1, arr_2);
+Print(res_matrix);
 
-int[] new_mass = FrequencyDict(mass, stop);
-PrintMass(new_mass);
+
 
