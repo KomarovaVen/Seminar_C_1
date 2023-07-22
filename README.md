@@ -1,1 +1,0 @@
-# Seminar_C_1
